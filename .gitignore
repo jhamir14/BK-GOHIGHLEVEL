@@ -1,0 +1,15 @@
+# ignorar el entorno virtual
+venv/
+
+# Archivos de Python compilados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# archivos de entorno
+.env
+*.env
+
+# base de datos
+*.sqlite3
