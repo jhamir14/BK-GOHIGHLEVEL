@@ -20,6 +20,8 @@ Se creó un flujo para:
 git clone https://github.com/usuario/BK-GOHIGHLEVEL.git
 cd BK-GOHIGHLEVEL
 
+---
+
 ### 2. Crear entorno virtual
 
 python -m venv venv
@@ -30,9 +32,13 @@ venv\Scripts\activate
 En Linux/Mac:
 source venv/bin/activate
 
+---
+
 ### 3. Instalar dependencias
 
 pip install -r requirements.txt
+
+---
 
 ### 4. Crear archivo .env
 
@@ -46,9 +52,13 @@ GHL_CALENDAR_ID=tu_calendar_id
 GHL_LOCATION_ID=tu_location_id
 GHL_CONTACT_ID=tu_contact_id
 
+---
+
 ### 5. Migrar la base de datos
 
 python manage.py migrate
+
+---
 
 ### 6. Ejecutar el servidor local
 
@@ -57,6 +67,8 @@ python manage.py runserver
 http://127.0.0.1:8000/
 
 🚀 Endpoints Implementados
+
+---
 
 ### 7. Crear cita (POST)
 
@@ -74,6 +86,8 @@ Copiar código
   "endTime": "2025-10-02T15:30:00Z",
   "title": "Consulta de prueba"
 }
+
+---
 
 ### 8. Consultar citas en GHL (GET)
 http://127.0.0.1:8000/api/appointments/list/?start=2025-10-01&end=2025-10-05&limit=3&page=1
@@ -101,6 +115,8 @@ Ejemplo de respuesta:
   "has_next": true
 }
 
+---
+
 ### 9. Ver citas locales (SQLite)
 http://127.0.0.1:8000/api/appointments/local/
 
@@ -127,27 +143,24 @@ no podras ver nada si antes no creas una cita desde postman.
 
 ✅ Resultados
 
-Se probó con Postman y la creación de citas funcionó correctamente.
+-Se probó con Postman y la creación de citas funcionó correctamente.
 
-Las citas creadas se visualizaron en el dashboard de GoHighLevel (ReflexoPerú).
+-Las citas creadas se visualizaron en el dashboard de GoHighLevel (ReflexoPerú).
 
-La consulta de citas devolvió los resultados correctamente con rango de fechas.
+-La consulta de citas devolvió los resultados correctamente con rango de fechas.
 
-Se implementó paginación local porque el endpoint no trae nextPageToken.
+-Se implementó paginación local porque el endpoint no trae nextPageToken.
 
-Las citas creadas también se almacenaron en la base local SQLite para control interno.
+-Las citas creadas también se almacenaron en la base local SQLite para control interno.
 
-📄 Notas
-### 10. Recomendaciones
+---
+### 10. 📄 Notas - Recomendaciones
 
 No olvides actualizar requirements.txt después de instalar paquetes:
 
 pip freeze > requirements.txt
 
 Este proyecto está en entorno de desarrollo local. Para producción se recomienda usar un servidor WSGI/ASGI como Gunicorn o Uvicorn.
-
-Si quieres ver tus citas locales en SQLite, usa:
-
 
 📦 requirements.txt
 txt
@@ -163,20 +176,22 @@ sqlparse==0.5.3
 tzdata==2025.2
 urllib3==2.5.0
 
+---
+
 ### 11. archivos a incluir en .gitignore
 
-# ignorar el entorno virtual
+#ignorar el entorno virtual
 venv/
 
-# Archivos de Python compilados
+#Archivos de Python compilados
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# archivos de entorno
+#archivos de entorno
 .env
 *.env
 
-# base de datos
+#base de datos
 *.sqlite3
