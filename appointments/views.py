@@ -119,7 +119,24 @@ def list_appointments(request):
     r = requests.get(url, headers=headers, params=params)
 
     if r.status_code == 200:
-        return Response(r.json(), status=status.HTTP_200_OK)
+        events = r.json().get("events", [])
+
+        # 📌 Paginación manual
+        page_size = int(request.query_params.get("limit", 3))
+        page = int(request.query_params.get("page", 1))
+
+        start_idx = (page - 1) * page_size
+        end_idx = start_idx + page_size
+
+        data = events[start_idx:end_idx]
+
+        return Response({
+            "events": data,
+            "page": page,
+            "limit": page_size,
+            "total": len(events),
+            "has_next": end_idx < len(events)
+        })
 
     return Response(r.json(), status=r.status_code)
 
