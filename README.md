@@ -26,9 +26,13 @@ SECRET_KEY=tu_clave_django
 DEBUG=True
 
 GHL_API_BASE_URL=https://api.gohighlevel.com/v1
+
 GHL_API_KEY=tu_token_ghl
+
 GHL_CALENDAR_ID=calendar_id_a_usar
+
 GHL_LOCATION_ID=location_id
+
 GHL_CONTACT_ID=contact_id
 
 
