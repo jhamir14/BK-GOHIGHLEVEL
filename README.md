@@ -150,9 +150,13 @@ Instalacion
 ### ESTRUCTURA GENERAL DE CARPETAS
 
 bk-cita/
+
 ├── appointments/
+
 │   ├── management/
+
 │   │   └── commands/
+
 │   │       └── reconcile_appointments.py   # 🛠️ Comando para reconciliación
 │   ├── migrations/
 │   ├── __init__.py
