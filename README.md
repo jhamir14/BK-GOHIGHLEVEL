@@ -60,12 +60,19 @@ python manage.py reconcile_appointments
 -Muestra en consola un resumen:
 
   🚀 Iniciando reconciliación de citas...
+  
   ✅ Citas obtenidas de GHL: 12
+  
   ✏️ Actualizando cita abc123 - cambios: ['title', 'status']
+  
   🚫 Cita cancelada en GHL pero no en local: xyz456 — actualizando estado...
+  
   📌 Faltantes en local: 3
+  
   📌 Canceladas no reflejadas: 2
+  
   📌 Citas modificadas: 5
+  
   ✅ Reconciliación finalizada.
   
 ---
