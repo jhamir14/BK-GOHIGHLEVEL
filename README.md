@@ -110,6 +110,8 @@ Iniciar en:
 
 Establece la hora diaria deseada en "Desencadenadores".
 
+En la seccion CONDICIONES desmarcar todo.
+
 ---
 
 ### 5. ✅ Requisitos previos
